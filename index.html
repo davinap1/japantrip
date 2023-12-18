@@ -56,21 +56,21 @@
   <p class="increased-font">Some popular places I visited in Japan</p>
 </body>
 
- <title>Three Images in a Row</title>
+ <title>Three Images in a Row w/ Captions</title>
   <style>
-    body {
-      text-align: center;
-    }
-    
     .image-container {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column; 
+      align-items: center; 
     }
 
+    .image-container figure{
+      margin-bottom: 10px; 
+    }
+    
     .image-container img {
       width: 400px;
       height: 400px;
-      margin-bottom: 10px;
     }
 
     .image-container figcaption{
