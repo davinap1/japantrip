@@ -1,97 +1,100 @@
-<!DOCTYPE html> <!-- always right at the top and tells browser looking at HTML file --> 
+<!DOCTYPE html>
 <html lang="en-US">
-  
-<html>
-<head> <!-- extra information that doesnt show up on screen -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Improved Website</title>
+  <link rel="stylesheet" href="css/style.css">
 
-    <meta charset= "utf-8"> <!-- ensures that the webpage will display special characters and symbols from diff languages -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> My improved website</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- separates the style CSS from the structure HTML. -->
-
-  <body style="text-align: center;">
-
-    <body style="background-color:#FFFDD0; color:#333333;">  <!--  content that user sees -->
-     <h1 style="color:rgb(93, 178, 248); font-size:40px;";> Welcome! This is my Japan Trip 2023! </h1>
-
-    <strong> My name is Davina. </strong> It is pronounced <em> dah-vee-nah. </em>
-
-</body>
-
-    <!-- This is an HTML comment. Only notes to yourself.  
-        b and i does not add meaning to text only bolds and italics do not use. em stands for emphasis but it 
-        italicizes the text
-     <a href="https://www.google.com/search?q=hey+hey+you+you+i+dont+like+your+girlfriend+cat+meme&tbm=isch&ved=2ahUKEwif7Ke47JmDAxU4O0QIHXegD38Q2-cCegQIABAA&oq=hey+hey+you+you+i+dont+like+your+girlfriend+cat+meme&gs_lcp=CgNpbWcQAzIJCAAQgAQQGBAKOg0IABCABBCKBRBDELEDOggIABCABBCxAzoFCAAQgAQ6EAgAEIAEEIoFEEMQsQMQgwE6CggAEIAEEIoFEEM6BggAEAUQHjoECAAQHjoGCAAQCBAeOgcIABCABBAYUPwrWNV6YLB7aA5wAHgAgAFgiAGOHZIBAjY1mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=hq6AZZ-RF7j2kPIP98C--Ac&bih=837&biw=822&rlz=1C1CHBF_enUS909US909 "> 
-      this will link you to google, but my current favorite meme currently. </a>
-  -->
-
-
-    <p style="color: blueviolet; font-size:15px; font-family: sans-serif;">Our rendition of the beatles crosswalk </p>
-
-
-<title>Centering and Resizing Image</title>
   <style>
     body {
       text-align: center;
+      background-color: #FFFDD0;
+      color: #333333;
     }
 
-    img {
-      width: 50%; /* Set the width to 50% of its normal size */
-      display: block;
-      margin: 0 auto; /* Center the image horizontally */
+    h1 {
+      color: rgb(93, 178, 248);
+      font-size: 40px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    em {
+      font-style: italic;
     }
 
     p {
-      font-size: 16px; /* Set the default font size for paragraphs */
+      color: blueviolet;
+      font-size: 15px;
+      font-family: sans-serif;
+    }
+
+    img {
+      width: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    p {
+      font-size: 16px;
     }
 
     .increased-font {
-      font-size: 20px; /* Set the increased font size for the specific paragraph */
+      font-size: 20px;
     }
-  </style>
-</head>
-<body>
-  <img src="https://raw.githubusercontent.com/davinap1/japantrip/main/409641628_332765163043465_1105282806750001340_n.jpg" alt="Three friends walking">
-  <p>Japan was my first international trip. My favorite part was that I got to do it with some of my closest friends.</p>
-  <p class="increased-font">Some popular places I visited in Japan</p>
-</body>
 
- <title>Three Images in a Row w/ Captions</title>
-  <style>
     .image-container {
       display: flex;
-      flex-content: space-between; 
-      align-items: flex-end; 
+      justify-content: space-between;
+      align-items: flex-end;
     }
 
-    .image-container figure{
+    .image-container figure {
       text-align: center;
     }
-    
+
     .image-container img {
       width: 400px;
       height: 400px;
-      margin-bottom: 10px; 
+      margin-bottom: 10px;
     }
 
-    .image-container figcaption{
+    .image-container figcaption {
       font-style: italic;
-      font-size: 14px; 
+      font-size: 14px;
     }
-    
   </style>
-<body>
-  <div class="image-container">
-    <img src="https://raw.githubusercontent.com/davinap1/japantrip/main/371524795_330485556514716_40123418440664459_n.jpg" alt="Kyoto">
-    <figcaption> Kyoto </figcaption>
-    
-    <img src="https://raw.githubusercontent.com/davinap1/japantrip/main/410046808_1304703006898277_4809720230447722664_n.jpg" alt= "Nara">
-      <figcaption> Nara </figcaption>
-    
-    <img src="https://raw.githubusercontent.com/davinap1/japantrip/main/410341587_3572487669682814_212798755561137609_n.jpg" alt= "Tokyo">
-      <figcaption> Tokyo </figcaption>
-  </div>
-</body>
-  
 </head>
+<body>
+
+  <h1>Welcome! This is my Japan Trip 2023!</h1>
+  <strong>My name is Davina.</strong> It is pronounced <em>dah-vee-nah.</em>
+
+  <p>Our rendition of the Beatles crosswalk</p>
+
+  <img src="https://raw.githubusercontent.com/davinap1/japantrip/main/409641628_332765163043465_1105282806750001340_n.jpg" alt="Three friends walking">
+  <p>Japan was my first international trip. My favorite part was that I got to do it with some of my closest friends.</p>
+  <p class="increased-font">Some popular places I visited in Japan</p>
+
+  <div class="image-container">
+    <figure>
+      <img src="https://raw.githubusercontent.com/davinap1/japantrip/main/371524795_330485556514716_40123418440664459_n.jpg" alt="Kyoto">
+      <figcaption>Kyoto</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://raw.githubusercontent.com/davinap1/japantrip/main/410046808_1304703006898277_4809720230447722664_n.jpg" alt="Nara">
+      <figcaption>Nara</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://raw.githubusercontent.com/davinap1/japantrip/main/410341587_3572487669682814_212798755561137609_n.jpg" alt="Tokyo">
+      <figcaption>Tokyo</figcaption>
+    </figure>
+  </div>
+
+</body>
 </html>
