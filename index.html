@@ -6,69 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Improved Website</title>
     <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Temperature Converter Styles -->
+
     <style>
         body {
-            margin-top: 60px;
             text-align: center;
+            background-color: white;
+            color: #333333;
         }
 
         h1 {
-            padding-bottom: 0.5rem;
             color: rgb(93, 178, 248);
             font-size: 40px;
         }
 
-        input[type=number] {
-            cursor: pointer;
+        strong {
+            font-weight: bold;
         }
 
-        #input-celsius {
-            background-color: #52DDCF;
-            font-size: 2.5rem;
+        em {
+            font-style: italic;
         }
 
-        #input-fahrenheit {
-            background-color: #16BAC5;
-            font-size: 2.5rem;
+        p {
+            color: black;
+            font-size: 15px;
+            font-family: sans-serif;
         }
 
-        #input-kelvin {
-            background-color: #42a0d9;
-            font-size: 2.5rem;
+        img {
+            max-width: 100%;
+            /* Make the image responsive */
+            height: auto;
+            /* Maintain the image's aspect ratio */
+            display: block;
+            margin: 0 auto;
         }
 
-        .form-padding {
-            padding: 2rem 1rem;
+        p {
+            font-size: 16px;
         }
 
-        ::-webkit-input-placeholder {
-            color: #FFFFFF !important;
+        .increased-font {
+            font-size: 20px;
         }
 
-        ::-moz-placeholder {
-            color: #FFFFFF !important;
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
         }
 
-        :-ms-input-placeholder {
-            color: #FFFFFF !important;
-        }
-
-        :-moz-placeholder {
-            color: #FFFFFF !important;
-        }
-
-        footer {
-            padding-top: 1.5rem;
-            font-size: 0.7rem;
-            line-height: 0.2rem;
+        .image-container figure {
             text-align: center;
         }
 
-        .icons {
-            max-width: 25px;
-            height: auto;
+        .image-container img {
+            max-width: 400px;
+            /* Make the image responsive */
+            height: 400px;
+            /* Maintain the image's aspect ratio */
+            margin-bottom: 10px;
+        }
+
+        .image-container figcaption {
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        .food-container {
+            display: flex;
+            flex-direction: column;
+            /* Stack items vertically */
+            align-items: center;
+            /* Center items horizontally */
+        }
+
+        .food-container figure {
+            margin-bottom: 20px;
+            /* Add space between each image and caption */
+        }
+
+        .food-container img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .food-container figcaption {
+            text-align: center;
+            font-style: italic;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -78,22 +104,7 @@
     <h1>Welcome! This is my Japan Trip 2023!</h1>
     <strong>My name is Davina.</strong> It is pronounced <em>dah-vee-nah.</em>
 
-    <!-- Temperature Converter Form -->
-    <div class="form-padding">
-        <label for="temperature">Enter Temperature:</label>
-        <input type="number" id="temperature" placeholder="Enter temperature">
-        <button onclick="convertTemperature()">Convert</button>
-
-        <div id="result-container">
-            <p id="result-celsius" class="result">Celsius: <span id="output-celsius"></span></p>
-            <p id="result-fahrenheit" class="result">Fahrenheit: <span id="output-fahrenheit"></span></p>
-            <p id="result-kelvin" class="result">Kelvin: <span id="output-kelvin"></span></p>
-        </div>
-    </div>
-
-    <!-- Rest of your existing content -->
-    <!-- ... -->
-  <p>Our rendition of the Beatles crosswalk</p>
+    <p>Our rendition of the Beatles crosswalk</p>
 
     <img src="https://raw.githubusercontent.com/davinap1/japantrip/main/409641628_332765163043465_1105282806750001340_n.jpg" alt="Three friends walking">
     <p>Japan was my first international trip. My favorite part was that I got to do it with some of my closest friends.</p>
@@ -118,234 +129,25 @@
 
     <!-- New paragraph below the images <p style="text-align: left; margin-left: 15px;" -->
     <p>Some other places I got to visit were Osaka and Hiroshima. Japan is such a beautiful place to be!
-       My biggest complaint is that we went during September when the temperature was still 37 degrees Celsius!  </p>
+        I would love to visit again if given the opportunity. They also had such great food. </p>
 
+    <title>Food in column</title>
+    <div class="food-container">
+        <figure>
+            <img src="https://raw.githubusercontent.com/davinap1/japantrip/main/food1.jpg" alt="steak">
+            <figcaption>Wagyu</figcaption>
+        </figure>
+        <figure>
+            <img src="https://raw.githubusercontent.com/davinap1/japantrip/main/ramen.jpg" alt="ramen">
+            <figcaption>Ramen</figcaption>
+        </figure>
+        <figure>
+            <img src="https://raw.githubusercontent.com/davinap1/japantrip/main/407179562_368850945633237_3645189488036148029_n.jpg" alt="Izakaya">
+            <figcaption>Izakaya</figcaption>
+        </figure>
+    </div>
+</body>
 
-    <script src="script.js"></script>
-
-const blogContainer = document.querySelector('.blog__container');
-const blogModal = document.querySelector(".blog__modal__body");
-
-let globalStore = [];
-
-const newCard = ({
-	id,
-	imageUrl,
-	blogTitle,
-	blogType,
-	blogDescription
-}) => `<div class="col-lg-4 col-md-6" id=${id}>
-<div class="card m-2">
-  <div class="card-header d-flex justify-content-end gap-2">
-    <button type="button" class="btn btn-outline-success" id="${id}" onclick="editCard.apply(this, arguments)"><i class="fas fa-pencil-alt" id="${id}" onclick="editCard.apply(this, arguments)"></i></button>
-    <button type="button" class="btn btn-outline-danger" id="${id}" onclick="deleteCard.apply(this, arguments)"><i class="fas fa-trash-alt" id="${id}" onclick="deleteCard.apply(this, arguments)"></i></button>
-  </div>
-  <img
-    src=${imageUrl}
-    class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${blogTitle}</h5>
-    <p class="card-text">${blogDescription}</p>
-    <span class="badge bg-primary">${blogType}</span>
-  </div>
-  <div class="card-footer text-muted">
-    <button type="button" id="${id}" class="btn btn-outline-primary float-end" data-bs-toggle="modal"
-    data-bs-target="#showblog" onclick="openBlog.apply(this, arguments)">Open Blog</button>
-  </div>
-</div>
-</div>`;
-
-const loadData = () => {
-
-	// access localstorage
-	// localStorage.getItem("blog") ===  localStorage.blog
-	const getInitialData = localStorage.blog; // if null, then
-	if (!getInitialData) return;
-
-	// convert stringified-object to object
-	const {
-		cards
-	} = JSON.parse(getInitialData);
-
-	cards.map((blogObject) => {
-		const createNewBlog = newCard(blogObject);
-		blogContainer.insertAdjacentHTML("beforeend", createNewBlog);
-		globalStore.push(blogObject);
-	});
-};
-
-const updateLocalStorage = () => {
-	localStorage.setItem("blog", JSON.stringify({
-		cards: globalStore
-	}))
-}
-
-const saveChanges = () => {
-	const blogData = {
-		id: `${Date.now()}`, // generating a unique id for each card
-		imageUrl: document.getElementById('imageurl').value,
-		blogTitle: document.getElementById('title').value,
-		blogType: document.getElementById('type').value,
-		blogDescription: document.getElementById('description').value
-	};
-
-	const createNewBlog = newCard(blogData);
-	blogContainer.insertAdjacentHTML("beforeend", createNewBlog);
-
-	globalStore.push(blogData);
-
-	updateLocalStorage()
-
-};
-
-const deleteCard = (event) => {
-
-	event = window.event;
-	const targetID = event.target.id;
-	const tagname = event.target.tagName; // BUTTON OR I
-
-	globalStore = globalStore.filter((blogObject) => blogObject.id !== targetID);
-
-	updateLocalStorage();
-
-	if (tagname === "BUTTON") {
-	
-		return blogContainer.removeChild(
-			event.target.parentNode.parentNode.parentNode // col-lg-4
-		);
-	}
-
-	return blogContainer.removeChild(
-		event.target.parentNode.parentNode.parentNode.parentNode // col-lg-4
-	);
-};
-
-const editCard = (event) => {
-
-	event = window.event;
-	const targetID = event.target.id;
-	const tagname = event.target.tagName;
-
-	let parentElement;
-	if (tagname === "BUTTON") {
-		parentElement = event.target.parentNode.parentNode;
-
-	} else {
-		parentElement = event.target.parentNode.parentNode.parentNode;
-	}
-
-	let blogTitle = parentElement.childNodes[5].childNodes[1];
-	let blogDescription = parentElement.childNodes[5].childNodes[3];
-	let blogType = parentElement.childNodes[5].childNodes[5];
-	let submitBtn = parentElement.childNodes[7].childNodes[1];
-
-	blogTitle.setAttribute("contenteditable", "true");
-
-	blogDescription.setAttribute("contenteditable", "true");
-	blogType.setAttribute("contenteditable", "true");
-	submitBtn.setAttribute(
-		"onclick",
-		"saveEditChanges.apply(this, arguments)"
-	);
-	submitBtn.innerHTML = "Save Changes";
-
-	submitBtn.removeAttribute("data-bs-toggle");
-	submitBtn.removeAttribute("data-bs-target");
-
-}
-
-const saveEditChanges = (event) => {
-
-	event = window.event;
-	const targetID = event.target.id;
-	const tagname = event.target.tagName;
-
-	let parentElement;
-	if (tagname === "BUTTON") {
-		parentElement = event.target.parentNode.parentNode;
-
-	} else {
-		parentElement = event.target.parentNode.parentNode.parentNode;
-	}
-
-	let blogTitle = parentElement.childNodes[5].childNodes[1];
-	let blogDescription = parentElement.childNodes[5].childNodes[3];
-	let blogType = parentElement.childNodes[5].childNodes[5];
-	let submitBtn = parentElement.childNodes[7].childNodes[1];
-
-	const updatedData = {
-
-		blogTitle: blogTitle.innerHTML,
-		blogDescription: blogDescription.innerHTML,
-		blogType: blogType.innerHTML,
-	}
-
-
-	globalStore = globalStore.map((blog) => {
-		if (blog.id === targetID) {
-			return {
-				id: blog.id,
-				imageUrl: blog.imageUrl,
-				blogTitle: updatedData.blogTitle,
-				blogType: updatedData.blogType,
-				blogDescription: updatedData.blogDescription,
-			};
-		}
-		return blog; // important statement
-	});
-
-	updateLocalStorage();
-
-	blogTitle.setAttribute("contenteditable", "false");
-
-	blogDescription.setAttribute("contenteditable", "false");
-	blogType.setAttribute("contenteditable", "false");
-
-	// modal added
-	submitBtn.setAttribute("onclick", "openBlog.apply(this, arguments)");
-	submitBtn.setAttribute("data-bs-toggle", "modal");
-	submitBtn.setAttribute("data-bs-target", "#showblog");
-
-	submitBtn.innerHTML = "Open Blog";
-
-}
-
-const htmlModalContent = ({
-	id,
-	blogTitle,
-	blogDescription,
-	imageUrl,
-	blogType
-}) => {
-	const date = new Date(parseInt(id));
-	return ` <div id=${id}>
-   <img
-   src=${imageUrl}
-   alt="bg image"
-   class="img-fluid place__holder__image mb-3 p-4"
-   />
-   <div class="text-sm text-muted ">Created on ${date.toDateString()}</div>
-   <h2 class="my-5 mt-5" style="display:inline;">${blogTitle}</h2>
-   <span class="badge bg-primary">${blogType}</span>
-   <p class="lead mt-2">
-   ${blogDescription}
-   </p></div>`;
-};
-
-const openBlog = (event) => {
-
-	event = window.event;
-	const targetID = event.target.id;
-
-	const getBlog = globalStore.filter(({
-		id
-	}) => id === targetID);
-	// console.log(getBlog[0]);
-	blogModal.innerHTML = htmlModalContent(getBlog[0]);
-};
 </body>
 
 </html>
-
-
-  
